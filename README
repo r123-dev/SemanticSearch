@@ -1,0 +1,64 @@
+# Semantic Search System
+
+## Objective
+
+Develop a web application that performs semantic search on case study documents related to a fictitious company, MindTickle. The system prioritizes relevant results based on meaning and context, not just exact keyword matches.
+
+## Features
+
+- **Upload API**: Allows uploading new case study documents in PDF format.
+- **Search API**: Performs semantic search and returns a list of relevant case study document names based on the search query.
+
+## Technologies Used
+
+- **Python**: Core programming language.
+- **FastAPI**: Web framework for building APIs.
+- **SentenceTransformers**: Library for creating and using sentence embeddings.
+- **PyMuPDF**: Library for extracting text from PDF files.
+- **Uvicorn**: ASGI server for running FastAPI applications.
+
+## Project Structure
+
+
+## Setup Instructions
+
+### Prerequisites
+
+- Python 3.7 or higher
+- pip (Python package installer)
+
+### Steps
+
+1. **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd semantic-search
+    ```
+
+2. **Set up a virtual environment**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install the dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the application**:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+## API Endpoints
+
+### 1. Upload Document
+
+- **Endpoint**: `/api/upload`
+- **Method**: POST
+- **Description**: Uploads a new case study document in PDF format.
+
+**Request Example**:
+```bash
+curl -X POST "http://0.0.0.0:8000/api/upload" -F "file=@/path/to/vvivekmourya.pdf"
